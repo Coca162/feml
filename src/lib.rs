@@ -48,12 +48,12 @@ pub enum Error {
     FileReadError,
 }
 
-pub fn parse_file<P: AsRef<path::Path>>(name: P) -> Result<Table, Error> {
-    match fs::read_to_string(name) {
-        Ok(file) => Ok(parser::parse_string(file)),
-        Err(e) => match e.kind() {
-            ErrorKind::NotFound => Err(Error::FileNotFound),
-            _ => Err(Error::FileReadError),
-        },
-    }
-}
+// pub fn parse_file<P: AsRef<path::Path>>(name: P) -> Result<Table, Error> {
+//     match fs::read_to_string(name) {
+//         Ok(file) => Ok(parser::parse_string(file)),
+//         Err(e) => match e.kind() {
+//             ErrorKind::NotFound => Err(Error::FileNotFound),
+//             _ => Err(Error::FileReadError),
+//         },
+//     }
+// }
